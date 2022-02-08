@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> All Books</title>
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	</head>
+	
+	<body>
+	<div class="container" > 
+	<div class="d-flex mb-2"><h2 class="mr-4"> Book List</h2>  <a class="btn btn-danger" href="/">Add Books</a></div>
+			
+		<table class="table">
+		  
+		 	<thead>
+		 		<th> id </th>
+		 		<th> Title </th>
+		 		<th> Author </th>
+		 		<th> ISBN </th>
+		 		<th>Publisher</th>
+		 		<th> Country </th>
+		 		<th> Gender </th>
+		 		<th>Action</th>
+		 	
+		 	</thead>
+		 	<tr th:each="book : ${bookStoreModel}">
+		 		<td th:text="${book.id}"> </td>
+		 		<td th:text="${book.title}"></td>
+		 		<td th:text="${book.author}"></td>
+		 		<td th:text="${book.isbn}"></td>
+		 		<td th:text="${book.publisher}"></td>
+		 		<td th:text="${book.country}"></td>
+		 		<td th:text="${book.gender}"></td>
+		 		
+		 		<td>
+		 		    <a class="btn btn-sm" th:href="@{/view-single-book/{id}(id=${book.id})}">View</a>
+		 			<a class="btn btn-sm" th:href="@{/edit/{id}(id=${book.id})}">Edit</a>
+		 			<a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a>
+		 		</td>
+		 			
+		 			
+		 	</tr>
+		</table>
+	</div>
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+	</body>
+</html>

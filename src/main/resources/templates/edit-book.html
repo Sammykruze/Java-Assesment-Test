@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Book-store Library</title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	</head>
+	
+		<body>
+		
+			<div class="container">
+			<div class="d-flex mb-2"><h2 class="mr-4"> Edit Book</h2>  <a class="btn btn-danger" href="/showallbooks">Show All Books</a></div>
+			<form class="form-group"  th:action="@{/update/{id}(id=${book.id})}"   th:object="${book}" method = "post" >
+			
+			
+				<input  class="form-control" type= "text" placeholder ="Book title" th:field="*{title}" /> <br />
+				<input  class="form-control" type= "text" placeholder ="Book author" th:field="*{author}" />  <br />
+				<input class="form-control" type= "text" placeholder ="Book isbn" th:field="*{isbn}" /><br />
+				<input class="form-control" type= "text" placeholder ="Book publisher" th:field="*{publisher}" /><br />
+				<input class="form-control" type= "text" placeholder ="Country" th:field="*{country}" /><br /> 
+				<input class="form-control" type= "text" placeholder ="Author gender" th:field="*{gender}" /><br /> 
+			
+			
+				<button type="submit" class="btn btn-outline-primary"> Edit Book To Library</button>
+			</form>
+			<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+			<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+			<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+		</body>
+</html>

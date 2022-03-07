@@ -9,7 +9,7 @@
 		<body>
 		
 			<div class="container">
-			<div class="d-flex mb-2"><h2 class="mr-4"> Book Library</h2>  <a class="btn btn-danger" href="/showallbooks">Show All Books</a></div>
+			<div class="d-flex mb-2"><h2 class="mr-4"> Book Library</h2>  <a class="btn btn-danger" href="/show-all-books">Show All Books</a></div>
 			<form class="form-group" th:action="@{/addnewbook}" th:object = "${bookStoreModel}" method = "post" >
 			
 			
@@ -21,7 +21,7 @@
 				<input class="form-control" type= "text" placeholder = "Author gender" th:field="*{gender}" /><br /> 
 			
 			
-				<button type="submit" class="btn btn-outline-primary"> Add Book To Library</button>
+				<button type="submit" class="btn btn-outline-info"> Add Book To Library</button>
 			</form>
 			<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
 			<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
